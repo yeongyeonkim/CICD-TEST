@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_process.sh
+  BeforeInstall:
+    - location: scripts/remove.sh # 捞傈 积己等 颇老 力芭
+#  AfterInstall:
+#    - location: scripts/change_permissions.sh
+  ApplicationStart:
+    - location: scripts/start_process.sh 
+
+#
